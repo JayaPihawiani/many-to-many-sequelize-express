@@ -32,9 +32,9 @@ class UserController {
       const verifyPassword = await argon.verify(checkEmail.password, password);
       if (!verifyPassword)
         return res.json({ msg: "Password yang dimasukkan salah!" });
-      const { id, name, email } = checkEmail.dataValues;
+      const { id, name, role } = checkEmail.dataValues;
       const token = jwt.sign(
-        { id, name, email },
+        { id, name, role },
         "sdnoqjbdoqwjbfioabkclfowigfbo",
         {
           expiresIn: "15m",

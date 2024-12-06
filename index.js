@@ -8,7 +8,7 @@ const app = express();
 
 try {
   await db.authenticate();
-  // await db.sync({ force: true });
+  // await db.sync({ alter: true });
   console.log("Database connected");
 } catch (error) {
   console.log(error.message);
